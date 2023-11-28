@@ -1,0 +1,219 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+/* .hidden{
+    display: none;
+} */
+.container{
+    height: 100%;
+}
+
+.nav-bar{
+    background-image: url(images/desktop-image-hero-1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 50%;
+    position: relative;
+}
+header{
+    display: flex;
+    align-items: center;
+    padding: 40px 20px;
+}
+.logo {
+    width: 60px;
+    height: 15px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.arrow-container{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 110px;
+    height: 60px;
+    display: flex;
+}
+
+.arrow-btn{
+    width: 100%;
+    background-color: black;
+    padding: 20px;
+}
+.text{
+    padding: 50px 30px;
+}
+.text-2{
+    padding: 50px 30px;
+}
+.text-container h1{
+    font-size: 2rem;
+    padding-bottom: 1rem;
+}
+.text-container p {
+    color: rgba(0,0,0,.5);
+    line-height: 21px;
+    font-size: .9375rem;
+    padding-bottom: 2rem;
+}
+.shop-now{
+    letter-spacing: 13px;
+    font-weight: 700;
+    border: none;
+    background-color: white;
+}
+.text-container h2{
+    font-size: 1rem;
+    letter-spacing: 5px;
+    padding-bottom: 1rem;
+}
+.about-dark, .about-light{
+    width: 100%;
+}
+.about-text{
+    padding-bottom: 0px;
+}
+.shop-now:hover, .left-arrow:hover, .right-arrow:hover{
+    cursor: pointer;
+    opacity: .7;
+}
+.menu, .closed{
+    cursor: pointer;
+}
+/**/
+.menu-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    padding-inline: 1.5rem;
+    transform: translateX(0);
+    transition: ease-in-out .35s;
+}
+.menu-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ul{
+    display: flex;
+    gap: 2rem;
+    font-weight: 700;
+}
+ul li{
+    list-style: none;
+}
+
+#mobile-view{
+    display: block;
+}
+#desktop-view{
+    display: none;
+}
+
+@media (min-width: 1024px){
+    #mobile-view{
+        display: none;
+    }
+    .container {
+        display: grid;
+        grid-template-areas: 'topleft topleft topright topright' 'left mid mid right';
+        grid-template-rows: 65% 35%;
+        grid-template-columns: .9fr 1fr .35fr .9fr;
+        overflow-y: hidden;
+    }
+    .nav-bar{grid-area: topleft;}
+    .text{grid-area: topleft;}
+    .text-1{grid-area: left;}
+    .text-2{grid-area: mid;}
+    .text-3{grid-area: right;}
+    .nav-bar, .text, .text-1,.text-2,.text-3 {
+        height: 100%;
+    }
+    header{
+        justify-content: space-between;
+        gap: 2.5rem;
+        padding-left: 4rem;
+        padding-top: 4rem;
+    }
+    #desktop-view{
+        display: block;
+        flex-grow: 1;
+    }
+    #desktop-view ul{
+        gap: 1rem;
+    }
+    #desktop-view ul li{
+        color: white;
+        font-weight: 400;
+        position: relative;
+        cursor: pointer;
+        width: 60px;
+        text-align: center;
+    }
+    #desktop-view ul li:hover{
+        font-weight: 700;
+    }
+    #desktop-view ul li::before{
+        content: '';
+        left: 25%;
+        bottom: -5px;
+        position: absolute;
+        background-color: white;
+        height: 3px;
+        width: 50%;
+        opacity: 0;
+        transition: ease .2s;
+    }
+    #desktop-view ul li:hover::before{
+        opacity: 1;
+    }
+    .text{
+        grid-column: span 2;
+        /* padding: min(calc(6vw + 2rem), 120px) min(calc(6vw - 1rem),90px); */
+        padding: 60px 60px;
+    }
+    .text-container h1{
+        /* font-size: clamp(27px,calc(10vw - 6rem), 44px); */
+        font-size: 44px;
+    }
+    .text-container h2{
+        font-size: 18px;
+    }
+    .text-container p{
+        font-size: 15px;
+        line-height: 25px;
+    }
+    .nav-bar{
+        background-image: url(images/desktop-image-hero-1.jpg);
+    }
+    .text-1{
+        grid-column: span 1;
+    }
+    .text-2{
+        padding: 40px 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .about-dark, .about-light{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .arrow-container{
+        width: 160px;
+        height: 80px;
+        right: -160px;
+    }
+    .arrow-btn{
+        padding: 27px 30px;
+    }
+}
