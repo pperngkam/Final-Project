@@ -217,3 +217,36 @@ ul li{
         padding: 27px 30px;
     }
 }
+.dropdown{
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+}
+.dropbtn{
+    color: #fff;
+}
+.dropdown-content{
+    border-radius: 10px;
+    padding: 20px;
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    width: 120px;
+    z-index: 2;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+.dropdown-content a{
+    color: black;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.dropdown-content a:hover{
+    background-color: gray;
+}
+
+.dropdown:hover .dropdown-content{
+    display: block;
+
+}
