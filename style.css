@@ -176,11 +176,9 @@ ul li{
     }
     .text{
         grid-column: span 2;
-        /* padding: min(calc(6vw + 2rem), 120px) min(calc(6vw - 1rem),90px); */
         padding: 60px 60px;
     }
     .text-container h1{
-        /* font-size: clamp(27px,calc(10vw - 6rem), 44px); */
         font-size: 44px;
     }
     .text-container h2{
