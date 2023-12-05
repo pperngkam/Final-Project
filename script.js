@@ -1,4 +1,4 @@
-// variables //
+
 const left = document.querySelector('.left-arrow');
 const right = document.querySelector('.right-arrow');
 const picture = document.querySelector('.nav-bar');
@@ -6,11 +6,9 @@ const picture = document.querySelector('.nav-bar');
 const title = document.querySelector('#title');
 const texts = document.querySelector('#text');
 
-// Variables //
 let counter = 1; 
 const totalSlides = 3;
 
-// EventListener //
 left.addEventListener('click', () => {
     counter = (counter > 1) ? counter - 1 : totalSlides;
     updateBackground();
@@ -22,12 +20,11 @@ right.addEventListener('click', () => {
     updateBackground();
     updateText();
 });
-// functions // DOM //
+
 function updateBackground() {
     picture.style.backgroundImage = 'url(\'/images/desktop-image-hero-' + counter + '.jpg\')';
 }
 
-// functions //
 function updateText() {
     if (counter === 1) {
         title.textContent = 'Discover innovative ways to decorate';
